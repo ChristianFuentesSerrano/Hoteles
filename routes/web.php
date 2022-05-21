@@ -4,8 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HabitacionController;
 use App\Http\Controllers\ReservacionController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\Check_inController;
+
+//Role controllers
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\UsuarioController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +24,12 @@ use App\Http\Controllers\Check_inController;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::resource('habitacion', HabitacionController::class);
-Route::resource('reservacion', ReservacionController::class);
-Route::resource('user', UserController::class);
-Route::resource('check_in', Check_inController::class);
+Route::group(['middleware' => ['auth']], function(){
+    Route::resource('roles', RolController::class);
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('habitaciones', HabitacionController::class);
+    Route::resource('reservaciones', ReservacionController::class);
+    Route::resource('check_ins', Check_inController::class);
+});
+
+
