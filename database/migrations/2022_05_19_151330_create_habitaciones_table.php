@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('capacidad');
             $table->integer('precio');
-            $table->boolean('ocupacion');
+            $table->boolean('ocupacion')->default(false);
         });
     }
 
