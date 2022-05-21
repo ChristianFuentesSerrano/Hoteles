@@ -22,7 +22,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
@@ -32,4 +35,4 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('check_ins', Check_inController::class);
 });
 
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
