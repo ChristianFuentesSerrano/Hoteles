@@ -29,7 +29,7 @@
     <!-- nav -->
     <nav>
         <div class="nav-wrapper  blue-grey darken-4">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="home" class=" brand-logo"><i
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('home') }}" class=" brand-logo"><i
                     class="material-icons">filter_vintage</i>MiHotel</a>
             <a href="#" class="sidenav-trigger" data-target="mobile-nav"> <i class="material-icons">menu</i> </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down    blue-grey darken-4">
@@ -89,7 +89,7 @@
 
 
     <!--            SCRIPTS             -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     @yield('script')

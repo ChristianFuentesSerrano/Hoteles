@@ -18,7 +18,7 @@ use App\Http\Controllers\Check_inController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 Route::resource('habitacion', HabitacionController::class);
 Route::resource('reservacion', ReservacionController::class);

@@ -3,7 +3,7 @@
 @section('title', 'Habitaciones')
 
 @section('links')
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
 @endsection
 
 @section('content')
@@ -64,10 +64,24 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#tabla_habitaciones").DataTable();
+            $("#tabla_habitaciones").DataTable({
+                responsive: true,
+                "language": {
+                    "lengthMenu": "",
+                    "zeroRecords": "Nada encontrado",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    'search': 'Buscar:',
+                    'paginate': {
+                        'next': 'Siguiente',
+                        'previous': 'Anterior'
+                    }
+                }
+            });
         });
     </script>
 @endsection
