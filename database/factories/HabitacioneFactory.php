@@ -21,8 +21,8 @@ class HabitacioneFactory extends Factory
     public function definition()
     {
         return [
-            'tipo' =>$this->faker->sentence(),
-            'descripcion' =>$this->faker->paragraph(),
+            'tipo' =>$this->faker->sentence(6, true),
+            'descripcion' =>$this->faker->paragraph(2, true),
             'capacidad' =>$this->faker->randomElement([1, 2, 4]),
             'precio' =>$this->faker->randomElement([1200, 2000, 3200]),
             'ocupacion' =>$this->faker->randomElement([true, false])
