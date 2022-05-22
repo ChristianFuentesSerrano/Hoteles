@@ -12,6 +12,19 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     @yield('links')
+    @yield('styles')
+    <style>
+        @media(max-width: 600px){
+            #logo   {
+                width: 70px;
+            }
+        } 
+        @media(min-width: 600px){
+            #logo   {
+                width: 80px;
+            }
+        } 
+    </style>
 
 </head>
 
@@ -29,14 +42,14 @@
     <!-- nav -->
     <nav>
         <div class="nav-wrapper  blue-grey darken-4">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ route('home') }}" class=" brand-logo"><i
-                    class="material-icons">filter_vintage</i>MiHotel</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=" brand-logo" href="{{ route('inicio') }}">
+                <img id="logo" class="navbar-brand-full" src="{{ asset('img/logo_2.png') }}" alt="logo"/></a>
             <a href="#" class="sidenav-trigger" data-target="mobile-nav"> <i class="material-icons">menu</i> </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down    blue-grey darken-4">
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
                             class="material-icons right">clear_all</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menú</a>
                 </li>
-                <li><a href="#"><i class="material-icons" title="Acerca de">info</i></a></li>
+                <li><a href="{{ route('acerca_de') }}"><i class="material-icons" title="Acerca de">info</i></a></li>
             </ul>
         </div>
     </nav>
