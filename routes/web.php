@@ -22,7 +22,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function(){
+    return view('inicio');
+})->name('inicio');
+Route::get('info', function(){
+    return view('acercade');
+})->name('acerca_de');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -34,5 +40,3 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('reservaciones', ReservacionController::class);
     Route::resource('check_ins', Check_inController::class);
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
