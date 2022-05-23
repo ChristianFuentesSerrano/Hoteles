@@ -34,9 +34,9 @@
                         <td>{{ $habitacion->precio }}</td>
                         <td>
                             @if ($habitacion->ocupacion == true)
-                                <i class="fas fa-times-circle"></i>
+                                 <i class="fas fa-times-circle">Ocupada</i>
                             @else
-                                <i class="fas fa-check-circle"></i>
+                                 <i class="fas fa-check-circle">Disponible</i>
                             @endif
                         </td>
                         <td>
