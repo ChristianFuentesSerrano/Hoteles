@@ -23,7 +23,7 @@ class HabitacionController extends Controller
      */
     public function index()
     {
-        $habitaciones = Habitacione::paginate(5);
+        $habitaciones = Habitacione::all();
         return view('habitaciones.index', compact('habitaciones'));
     }
 
@@ -102,9 +102,9 @@ class HabitacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Habitacione $habitacion)
+    public function destroy($id)
     {
-        $habitacion->delete();
+        Habitacione::find($id)->delete();
         return redirect()->route('habitaciones.index');
     }
 }
