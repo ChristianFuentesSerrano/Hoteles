@@ -10,10 +10,10 @@ class HabitacionController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-habitacion | crear-habitacion | editar-habitacion | borrar-habitacion', ['only'=>['index']]);
-        $this->middleware('crear-habitacion', ['only'=>['create','store']]);
-        $this->middleware('editar-habitacion', ['only'=>['edit','update']]);
-        $this->middleware('borrar-habitacion', ['only'=>['destroy']]);
+        $this->middleware('permission:ver-habitaciones | crear-habitacion | editar-habitacion | borrar-habitacion', ['only'=>['index']]);
+        $this->middleware('permission:crear-habitacion', ['only'=>['create','store']]);
+        $this->middleware('permission:editar-habitacion', ['only'=>['edit','update']]);
+        $this->middleware('permission:borrar-habitacion', ['only'=>['destroy']]);
     }
 
     /**
