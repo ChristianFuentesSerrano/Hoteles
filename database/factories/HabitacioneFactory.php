@@ -25,7 +25,7 @@ class HabitacioneFactory extends Factory
             'descripcion' =>$this->faker->paragraph(2, true),
             'capacidad' =>$this->faker->randomElement([1, 2, 4]),
             'precio' =>$this->faker->randomElement([1200, 2000, 3200]),
-            'ocupacion' =>$this->faker->randomElement([true, false])
+            'ocupacion' =>$this->faker->randomElement([false])
         ];
     }
 }
