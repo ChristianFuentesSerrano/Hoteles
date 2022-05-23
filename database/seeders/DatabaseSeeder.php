@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        $this->call([
+            SeederTablaPermisos::class,
+            SeederSuperAdmin::class
+        ]);
         Habitacione::factory(50)->create();
         \App\Models\User::factory(10)->create();
     }

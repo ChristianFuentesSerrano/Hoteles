@@ -23,10 +23,26 @@ class SeederTablaPermisos extends Seeder
             'borrar-rol',
 
             //tabla habitaciones
-            'ver-habitacion',
+            'ver-habitaciones',
             'crear-habitacion',
             'editar-habitacion',
             'borrar-habitacion',
+            'ver-habitaciones-ocupadas',
+
+            //tabla reservaciones
+            'ver-reservaciones',
+            'editar-reservaciones',
+            'borrar-reservacion',
+
+            //tabla check in
+            'hacer-check_in',
+            'hacer-check_out',
+
+            //tabla usuarios
+            'ver-usuarios',
+            'crear-usuario',
+            'editar-usuario',
+            'borrar-usuario',
         ];
         foreach($permisos as $permiso){
             Permission::create(['name'=>$permiso]);
