@@ -12,6 +12,15 @@ use Spatie\Permission\Models\Role;
 
 class UsuarioController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:ver-usuarios | crear-usuario | editar-usuario | borrar-usuario', ['only'=>['index']]);
+        $this->middleware('permission:crear-usuario', ['only'=>['create','store']]);
+        $this->middleware('permission:editar-usuario', ['only'=>['edit','update']]);
+        $this->middleware('permission:borrar-usuario', ['only'=>['destroy']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +53,7 @@ class UsuarioController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:users,email,',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
@@ -84,7 +93,7 @@ class UsuarioController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'email' => 'required|email|unique:users,email'.$id,
+            'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);
