@@ -1,4 +1,5 @@
 @extends('layout.plantilla')
+@section('title', 'Acerca de')
 
 @section('styles')
     <style>
