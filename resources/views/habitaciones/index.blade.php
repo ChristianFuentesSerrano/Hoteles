@@ -11,6 +11,7 @@
         <div class="section-header">
             <h3 class="page__heading">Habitaciones</h3>
         </div>
+        <a class="btn btn-warning" href="{{ route('habitaciones.create') }}">Nueva</a>
         <table class="table table-striped mt-2" id="tabla_habitaciones">
             <thead style="background-color: #6777ef;">
                 <tr>
