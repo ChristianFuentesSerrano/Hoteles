@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Habitacione;
+use App\Models\Reservacione;
 use Illuminate\Http\Request;
 
 class ReservacionController extends Controller
@@ -16,12 +18,18 @@ class ReservacionController extends Controller
         //
     }
 
+    public function index_habitaciones()
+    {
+        $habitaciones = Habitacione::where('ocupacion', false)->paginate(8);
+        return view('reservaciones.index_habitaciones_disponibles', compact('habitaciones'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
     }
@@ -33,17 +41,6 @@ class ReservacionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }
