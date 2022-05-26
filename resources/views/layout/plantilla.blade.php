@@ -45,7 +45,7 @@
         <div class="nav-wrapper  blue-grey darken-4">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=" brand-logo" href="{{ route('inicio') }}">
                 <img id="logo" class="navbar-brand-full" src="{{ asset('img/logo_2.png') }}" alt="logo"/></a>
-            <a href="#" class="sidenav-trigger" data-target="mobile-nav"> <i class="material-icons">menu</i> </a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav" id="menu"> <i class="material-icons">menu</i> </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down    blue-grey darken-4">
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
                             class="material-icons right">clear_all</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menú</a>
