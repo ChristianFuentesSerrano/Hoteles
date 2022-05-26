@@ -33,6 +33,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
+Route::get('habitaciones_disponibles', [ReservacionController::class, 'index_habitaciones'])->name('reservaciones.habitaciones_disponibles');
+Route::get('reservaciones', [ReservacionController::class, 'create'])->name('reservaciones.create');
+Route::post('reservaciones', [ReservacionController::class, 'store'])->name('reservaciones.store');
+
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuarios', UsuarioController::class);
