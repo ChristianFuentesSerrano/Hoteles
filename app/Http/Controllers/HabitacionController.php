@@ -56,24 +56,14 @@ class HabitacionController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Habitacione $habitacion)
+    public function edit($id)
     {
+        $habitacion = Habitacione::find($id);
         return view('habitaciones.editar', compact('habitacion'));
     }
 
@@ -84,8 +74,9 @@ class HabitacionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Habitacione $habitacion)
+    public function update(Request $request, $id)
     {
+        $habitacion = Habitacione::find($id);
         request()->validate([
             'tipo' => 'required',
             'descripcion' => 'required',
