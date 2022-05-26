@@ -29,9 +29,9 @@
                                     <div class="form-group">
                                         <label for="tipo">Tipo</label>
                                         {!! Form::select('tipo', [
-                                            'individual' => 'Individual', 
-                                            'doble' => 'Doble',
-                                            'familiar' => 'Familiar'], 
+                                            'suite' => 'Suite', 
+                                            'junior suite' => 'Junior suite',
+                                            'gran suite' => 'Gran suite'], 
                                             null, array('class'=>'form-control')) !!}
                                     </div>
                                 </div>
