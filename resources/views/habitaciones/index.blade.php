@@ -20,7 +20,6 @@
                     <th style="color: #fff">Descripción</th>
                     <th style="color: #fff">Capacidad</th>
                     <th style="color: #fff">Precio</th>
-                    <th style="color: #fff">Estatus</th>
                     <th style="color: #fff">Acciones</th>
                 </tr>
             </thead>
@@ -29,17 +28,10 @@
                 @foreach ($habitaciones as $habitacion)
                     <tr>
                         <td>{{ $habitacion->id }}</td>
-                        <td>{{ $habitacion->tipo }}</td>
+                        <td>{{ ucfirst($habitacion->tipo) }}</td>
                         <td>{{ $habitacion->descripcion }}</td>
                         <td>{{ $habitacion->capacidad }}</td>
                         <td>{{ $habitacion->precio }}</td>
-                        <td>
-                            @if ($habitacion->ocupacion == true)
-                                 <i class="fas fa-times-circle">Ocupada</i>
-                            @else
-                                 <i class="fas fa-check-circle">Disponible</i>
-                            @endif
-                        </td>
                         <td>
                             <a href="{{ route('habitaciones.edit', $habitacion->id) }}"
                                 class="btn btn-info"><i class="fas fa-edit"></i> Editar</a>
