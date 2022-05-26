@@ -21,7 +21,7 @@
     <li class="teal">
         <a>Menú</a>
     </li>
-    <li><a href="#">Reservar habitacion</a></li>
+    <li><a href="{{ route('reservaciones.habitaciones_disponibles') }}">Reservar habitacion</a></li>
     <li><a href="{{ route('home') }}">Iniciar Sesion</a></li>
 @endsection
 
